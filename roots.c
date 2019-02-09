@@ -25,12 +25,11 @@ int main(int argc, char *argv[]) {
         // minus the floor of the root to isolate the fraction
         fraction = cubeRoot - floorl(cubeRoot);
         // get the first 32 bits of the fraction by multiplying the fraction by 2^32
+        // in C we can use the hexidecimal value of 2^32 to multipl
         multiply = fraction * 0x100000000;
         // then using the floor method to remove the fraction
         multiply = floorl(multiply);
-        // convert the fraction to hexidecimal
-        
-        // print out the primes, their cube roots, their fractions
+        // print out the primes, their cube roots, their fractions and the hexidecimal value
         printf("%3d -> %3.6Lf -> %3.6Lf -> %0.8x \n", primes[i], cubeRoot, fraction, (uint32_t)multiply);
 
         
